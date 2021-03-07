@@ -23,21 +23,37 @@ li{
     </div>
     
     <div class="Applicationform">
-        <form action="/store_form" method="post" enctype="multipart/form-data">
+        <form action="/store_form"  class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
             <ol>
             <div id="personalDetail" class="block">
               <center><h3 >Personal Detail :--</h3></center>  
-                <li>Application no: <input type="text" name="Application_No" id="Application_No"></li>
-                <li>Applicant Name*: <input type="text" name="Applicant_Name"placeholder="Applicant Name" required></li>
-                <li>Application date : <input type="date" name="Application_date" placeholder="Application date" required></li>
+              Application no: <input type="text" name="Application_No" id="Application_No">
+              Applicant Name*: <input type="text" name="Applicant_Name"placeholder="Applicant Name" required>
+              Application date : <input type="date" name="Application_date" placeholder="Application date" required>
+              Appellation* :
+                    <select name="Appellation" >
+                        <option value="0"selected disabled>Select</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
+                <li>Suffix* :
+                    <select name="Suffix" >
+                        <option value="0"selected disabled>Select</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
                 <li>EPIC / UID No.* : <input type="number" name="EPIC_UID_No" placeholder=""></li>
                 <li>Date of Birth* : <input type="date" name="DOB" placeholder="Date of Birth"></li>
                 <li>Gender* :
                     <select name="gender" >
                         <option value="0"selected disabled>Select</option>
-                        <option value="M">MALE</option>
-                        <option value="F">FEMALE</option>
+                        <option value="MALE">MALE</option>
+                        <option value="Female">FEMALE</option>
                         <option value="Others">OTHERS</option>
                     </select>
                 </li>
@@ -77,6 +93,22 @@ li{
                 <li> Email : <input type="email" name="Email" placeholder="abc@mail.com"></li>
                 <li>Contact No* : <input type="number" name="Contact_No" placeholder="" required></li>
                 <li>Father’s Name* : <input type="text" name="Fathers_Name" placeholder="" required></li>
+                <li>Appellation* :
+                    <select name="Appellation_F" >
+                        <option value="0"selected disabled>Select</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
+                <li>Suffix* :
+                    <select name="Suffix_F" >
+                        <option value="0"selected disabled>Select</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
                 </div>
                 <div id="present_address" class="block">
                 <li>
@@ -645,6 +677,7 @@ li{
                 <div id="otherDetail" class="block">
                 <p class="address">Other Details :--</p>
                 <li>V.C : <input type="text" name="VC" placeholder="" required></li>
+                <li>H_No: <input type="text" name="H_No" placeholder="" required></li>
                 
                 <li>Purpose of stay* : <textarea name="Purpose_of_stay"  cols="30" rows="10" required></textarea></li>
                 <li>Need for labour : <textarea name="Need_for_labour" cols="30" rows="10"></textarea></li>

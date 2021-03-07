@@ -67,24 +67,24 @@ class forwarderController extends Controller
              $data->save();
 //                  MAIL
 
-$data= ApplicationForm::find($id);
+// $data= ApplicationForm::find($id);
 
-             $applicantName = $data->Applicant_Name;
-             $passNo = $data->Pass_No;
-             $receiverMail = $data->Email;
-            $msg="Hello $applicantName, your application form bearing INNER LINE PASS NUMBER $passNo has been approved for the renewal of inner line pass  by FORWARDER";
-            $abs=$data->Email;
-            $receiverMail = $abs;
-         //   dd($receiverMail);
-             $data = array("body"=>$msg);
+//              $applicantName = $data->Applicant_Name;
+//              $passNo = $data->Pass_No;
+//              $receiverMail = $data->Email;
+//             $msg="Hello $applicantName, your application form bearing INNER LINE PASS NUMBER $passNo has been approved for the renewal of inner line pass  by FORWARDER";
+//             $abs=$data->Email;
+//             $receiverMail = $abs;
+//          //   dd($receiverMail);
+//              $data = array("body"=>$msg);
       
-             Mail::send('email',$data,function($message) use ($receiverMail,$applicantName)
-             {    $message->to($receiverMail,$applicantName)
-                 ->subject("$applicantName YOUR APPLICATION FOR THE RENEWAL OF INNER LINE PASS  HAS BEEN APPROVED ");
-                 $message->from("abc@mail.com","INNER LINE PASS");
-                 $message->replyTo("aktricks999@gmail.com");
+//              Mail::send('email',$data,function($message) use ($receiverMail,$applicantName)
+//              {    $message->to($receiverMail,$applicantName)
+//                  ->subject("$applicantName YOUR APPLICATION FOR THE RENEWAL OF INNER LINE PASS  HAS BEEN APPROVED ");
+//                  $message->from("abc@mail.com","INNER LINE PASS");
+//                  $message->replyTo("aktricks999@gmail.com");
      
-             });
+//              });
 
 
 
@@ -94,8 +94,9 @@ $data= ApplicationForm::find($id);
               return view('home');
         }
         else{
+            $data->UPDATION_FROM_CSC="Rejected";
+            $data->save();
             return view('rejectionByForwarder',compact('data'));
-            // $data->Remarks_from_forwarder="Reject";
             //  return view('home');
         }
        
@@ -128,5 +129,19 @@ $receiverMail = $abs;
 
         return view('home');
     }
+
+
+    public function store(Request $request)
+{
+    
+    $application_forms= new ApplicationForm();
+    $application_forms->Note_sheet=request('Note_sheet');
+    $application_forms->Due_date_for_decision_of_application_o=request('Due_date_for_decision_of_application_o');
+    $application_forms->Target_date=request('Target_date');
+   
+    $application_forms->save();
+
+
+}
 
 }

@@ -20,6 +20,8 @@ class CreateApplicationFormsTable extends Migration
             $table->String('Pass_No')->nullable();
             $table->Date('Application_date')->nullable();
             $table->String('Applicant_Name')->nullable();
+            $table->String('Appellation')->nullable();
+            $table->String('Suffix')->nullable();
             $table->integer('EPIC_UID_No')->nullable();
             $table->Date('DOB')->nullable();
             $table->String('gender')->nullable();
@@ -31,6 +33,8 @@ class CreateApplicationFormsTable extends Migration
             $table->String('Email')->nullable();
             $table->integer('Contact_No')->nullable();
             $table->String('Fathers_Name')->nullable();
+            $table->String('Appellation_F')->nullable();
+            $table->String('Suffix_F')->nullable();
             $table->String('Present_Address_Hno')->nullable();
             $table->String('Present_Address_Sub_locality1')->nullable();
             $table->String('Present_Address_Sub_locality2')->nullable();
@@ -72,6 +76,7 @@ class CreateApplicationFormsTable extends Migration
             $table->String('sponsor_address_Police_Station')->nullable();
             $table->String('sponsor_address_Post_office');
             $table->String('VC')->nullable();
+            $table->String('H_No')->nullable();
             $table->String('Purpose_of_stay')->nullable();
             $table->String('Need_for_labour')->nullable();
             $table->String('Regd_No')->nullable();
@@ -82,9 +87,22 @@ class CreateApplicationFormsTable extends Migration
             $table->String('doc2')->nullable();
             $table->String('Remark')->nullable();
             $table->String('Reason_For_Extension')->nullable();
-            $table->String('UPDATION FROM CSC')->nullable();
+            $table->String('A')->nullable();
+            $table->String('B')->nullable();
+            $table->String('UPDATION_FROM_CSC')->nullable();
             $table->String('Remarks_from_forwarder')->nullable();
             $table->String('Remarks_from_adc')->nullable();
+            $table->String('Certificate')->nullable();
+            $table->String('Acknowledgement')->nullable();
+            $table->Date('Due_date_for_decision_of_application_')->nullable();
+            $table->Date('Target_date')->nullable();
+            $table->String('Comments_by_the_forwarder')->nullable();
+
+            $table->integer('Note_sheet_file_number')->nullable();
+            $table->integer('Note_sheet')->nullable();
+            $table->Date('Due_date_of_decision_on_the_application_o')->nullable();
+            $table->Date('Target_date_o')->nullable();
+            $table->String('Remarks_by_approving_authority')->nullable();
 
         });
     }

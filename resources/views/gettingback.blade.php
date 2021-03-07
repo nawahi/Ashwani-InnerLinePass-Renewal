@@ -1,4 +1,4 @@
-@extends('layouts.ash')
+ @extends('layouts.ash')
 <stylE>
 
 li{
@@ -31,12 +31,28 @@ li{
             
                 <li>Application no: <input  value="{{$application_forms->Application_No}}" name="Application_No" ></li>
                 <li>Applicant Name*: <input  value="{{$application_forms->Applicant_Name}} " name="Applicant_Name"placeholder="Applicant Name" required></li>
+                <li>Appellation* :
+                    <select name="Appellation" >
+                        <option selected  >{{$application_forms->Appellation}}</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
+                <li>Suffix* :
+                    <select name="Suffix" >
+                        <option alue="0"selected >{{$application_forms->Suffix}}</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
                 <li>Application date : <input  value="{{ $application_forms->Application_date}} " name="Application_date"  required></li>
                 <li>EPIC / UID No.* : <input  value="{{ $application_forms->EPIC_UID_No}} " name="EPIC_UID_No" placeholder=""></li>
                 <li>Date of Birth* : <input  name="DOB"value="{{ $application_forms->DOB}} " placeholder="Date of Birth"></li>
                 <li>Gender* :
                     <select name="gender" >
-                        <optionselected >{{ $application_forms->gender}} </option>
+                        <option selected >{{ $application_forms->gender}} </option>
                         <option value="M">MALE</option>
                         <option value="F">FEMALE</option>
                         <option value="Others">OTHERS</option>
@@ -79,6 +95,22 @@ li{
                 <li>Contact No* : <input type="number" value="{{ $application_forms->Contact_No}}"  name="Contact_No" placeholder="" required></li>
                 <li>Father’s Name* : <input type="text" value="{{ $application_forms->Fathers_Name }}" name="Fathers_Name" placeholder="" required></li>
                 </div>
+                <li>Appellation* :
+                    <select name="Appellation_F" >
+                        <option selected >{{ $application_forms->Appellation_F }}</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
+                <li>Suffix* :
+                    <select name="Suffix_F" >
+                        <option selected >{{ $application_forms->Suffix_F }}</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                    </select>
+                </li>
                 <div id="present_address" class="block">
                 <li>
                 <p class="address">Present Address :--</p>
@@ -646,6 +678,7 @@ li{
                 <div id="otherDetail" class="block">
                 <p class="address">Other Details :--</p>
                 <li>V.C : <input type="text" value='{{$application_forms->VC}}' name="VC" placeholder="" required></li>
+                <li>H_No: <input type="text"  value='{{$application_forms->H_No}}'name="H_No" placeholder="" required></li>
                 
                 <li>Purpose of stay* : <textarea name="Purpose_of_stay"  cols="30" rows="10" required>{{$application_forms->Purpose_of_stay}}</textarea></li>
                 <li>Need for labour : <textarea name="Need_for_labour" cols="30" rows="10">{{$application_forms->Need_for_labour}}</textarea>{{$application_forms->Need_for_labour}}</li>

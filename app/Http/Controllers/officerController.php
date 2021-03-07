@@ -132,6 +132,20 @@ class officerController extends Controller
 
         return redirect('/officer');
     }
+    
+    public function store(Request $request)
+{
+    
+    $application_forms= new ApplicationForm();
+    $application_forms->Note_sheet=request('Note_sheet');
+    $application_forms->Note_sheet_file_number= "NS".time();
+    $application_forms->Due_date_for_decision_of_application_=request('Due_date_for_decision_of_application_');
+    $application_forms->Target_date_o=request('Target_date_o');
+   
+    $application_forms->save();
+
+
+}
 
   
 }

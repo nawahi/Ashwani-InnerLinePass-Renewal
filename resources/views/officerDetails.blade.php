@@ -9,7 +9,7 @@
         <div class="nav_form">
             <h3 class="navbar">Application Form No. :{{$application_forms->Application_No}}</h3>
         </div>
-        <table width="100%" class="table table-striped table-dark">
+        <table width="100%" class="table table-striped table-light">
             <tr>
                 <th>Application date : </th>
                 <td>{{$application_forms->Application_date}}</td>
@@ -253,18 +253,31 @@
             </tr>
             <tr>
                 <th>EPIC/UID No. of Sponsor :</th>
-                <td><a href="/storage/documents_1/{{$application_forms->doc1}}"  target="_blank"><button class="btn btn-info">Click here to view</button></a></td>
+                <td><a href="/storage/documents_1/{{$application_forms->doc1}}"  target="_blank"><button class="btn btn-primary">Click here to view</button></a></td>
                 <td><a href="/download1/{{$application_forms->id}}" ><button class="btn btn-warning">Download Here</button></td>
             </tr>
             <tr>
                 <th>Provisional Pass No:</th>
-                <td><a href="/storage/documents_2/{{$application_forms->doc2}}"  target="_blank"><button class="btn btn-info">Click here to view</button></td>
+                <td><a href="/storage/documents_2/{{$application_forms->doc2}}"  target="_blank"><button class="btn btn-primary">Click here to view</button></td>
                 <br>
                 <td><a href="/download2/{{$application_forms->id}}" ><button class="btn btn-warning">Download Here</button></td>
             </tr>
-        </table>    
-           
-            <br>
+        </table> 
+        <form action="/store" method="post">
+        @csrf
+        Note_sheet : <textarea name="Note_sheet" id="Note_sheet" cols="30" rows="10" required></textarea>
+        
+        <li>Due_date_for_decision_of_application_ o: <input type="date" name="Due_date_for_decision_of_application_o" placeholder="Due_date_for_decision_of_application_o" required></li>
+
+<li>Target_date_o : <input type="date" name="Target_date_o" placeholder="Target_date_o" required></li>
+   
+        </form>
+
+
+
+           <CENTER>
+          <TABle> 
+          <TR><TH>
             <form action="/remarkOff/{{$application_forms->id}}" method="post">
             @csrf
             <center>
@@ -273,7 +286,8 @@
                 
             </center>
             </form>
-
+            </TH>
+            <TH>
             <form action="/remarkOff/{{$application_forms->id}}" method="post">
             @csrf
             <center>
@@ -281,5 +295,9 @@
                 <button type="submit" name="Reject"class="btn btn-danger">Reject</button>
             </center>
             </form>
+            </TH>
+            </TR>
+            </TABle>
+            </CENTER>
     </div>
     @endsection

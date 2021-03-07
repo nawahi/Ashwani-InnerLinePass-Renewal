@@ -10,6 +10,7 @@ class user extends Controller
     {
         echo "hello";
         
+        
         echo $id;
         return view("prac");
     }

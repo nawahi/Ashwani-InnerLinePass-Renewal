@@ -28,6 +28,8 @@ class ApplicationFormController extends Controller
         $application_forms->Application_No=request('Application_No');
         $application_forms->Application_date=request('Application_date');
         $application_forms->Applicant_Name=request('Applicant_Name');
+        $application_forms->Appellation=request('Appellation');
+        $application_forms->Suffix=request('Suffix');
         $application_forms->EPIC_UID_No=request('EPIC_UID_No');
         $application_forms->DOB=request('DOB');
         $application_forms->gender=request('gender');
@@ -39,6 +41,8 @@ class ApplicationFormController extends Controller
         $application_forms->Email=request('Email');
         $application_forms->Contact_No=request('Contact_No');
         $application_forms->Fathers_Name=request('Fathers_Name');
+        $application_forms->Appellation_F=request('Appellation_F');
+        $application_forms->Suffix_F=request('Suffix_F');
 
         $application_forms->Present_Address_Hno=request('Present_Address_Hno');
         $application_forms->Present_Address_Sub_locality1=request('Present_Address_Sub_locality1');
@@ -83,6 +87,7 @@ class ApplicationFormController extends Controller
         $application_forms->sponsor_address_Post_office=request('sponsor_address_Post_office');
         
         $application_forms->VC=request('VC');
+        $application_forms->H_No=request('H_No');
         $application_forms->Purpose_of_stay=request('Purpose_of_stay');
         $application_forms->Need_for_labour=request('Need_for_labour');
         $application_forms->Regd_No=request('Regd_No');
@@ -91,6 +96,17 @@ class ApplicationFormController extends Controller
         $application_forms->Validaty_Period=request('Validaty_Period');
         $application_forms->Remark=request('Remark');
         $application_forms->Reason_For_Extension=request('Reason_For_Extension');
+      
+
+        $application_forms->Remarks_from_forwarder="NULL";
+        $application_forms->Remarks_from_adc="NULL";
+
+        $application_forms->A="waiting";
+        $application_forms->B="waiting";
+        
+        
+        $application_forms->Certificate="Downloaded";
+        $application_forms->Acknowledgement="Downloaded";
         //
         //FOR DOC 1
         //
@@ -154,6 +170,7 @@ class ApplicationFormController extends Controller
 
       
         public function autofill(){
+            
             $search_text = $_GET['autofill'];
             $Applicant_Name =ApplicationForm::where('Applicant_Name','LIKE', '%'.$search_text.'%')->get();
     

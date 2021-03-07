@@ -11,7 +11,11 @@
         <div class="nav_form">
           <h2 class="navbar"><center>Application Form No. :{{$application_forms->Application_No}}</center></h2>
         </div>
-        <table>
+        <table class="table table-striped">
+            <tr>
+                <th>PASS NUMBER : </th>
+                <td>{{$application_forms->Pass_No}}</td>
+            </tr>
             <tr>
                 <th>Application date : </th>
                 <td>{{$application_forms->Application_date}}</td>
@@ -20,6 +24,16 @@
                 <th>Applicant Name*: </th>
 
                 <td>{{$application_forms->Applicant_Name}}</td>
+            </tr>
+            <tr>
+                <th>Appellation: </th>
+
+               <td>{{$application_forms->Appellation}}</td>
+            </tr>
+            <tr>
+                <th>Suffix*: </th>
+
+                <td>{{$application_forms->Suffix}}</td>
             </tr>
             <tr>
                 <th>EPIC / UID No.* :</th>
@@ -66,6 +80,14 @@
                 <td>{{$application_forms->Fathers_Name}}</td>
             </tr>
             <tr>
+                <th>Appellation :</th>
+                <td>{{$application_forms->Appellation_F}}</td>
+            </tr>
+            <tr>
+                <th>SUFFIX* :</th>
+                <td>{{$application_forms->Suffix_F}}</td>
+            </tr>
+            <tr>
                 <th>House no.* :</th>
                 <td>{{$application_forms->Present_Address_Hno}}</td>
             </tr>
@@ -99,7 +121,7 @@
             </tr>
             <tr>
                 <th>Country* :</th>
-                <td>{{$application_forms->Present_Address_Country}}</td>
+                <td>{{$application_forms->Permanent_Address_Country}}</td>
             </tr>
             <tr>
                 <th>Police Station* :</th>
@@ -223,6 +245,14 @@
                 <td>{{$application_forms->sponsor_address_Post_office}}</td>
             </tr>
             <tr>
+                <th>VC :</th>
+                <td>{{$application_forms->VC}}</td>
+            </tr>
+            <tr>
+                <th>H_No:</th>
+                <td>{{$application_forms->H_No}}</td>
+            </tr>
+            <tr>
                 <th>Purpose of stay : </th>
                 <td>{{$application_forms->Purpose_of_stay}}</td>
             </tr>
@@ -252,7 +282,7 @@
             </tr>
             <tr>
             <tr>
-                <th>Reason_For_Extension:</th>
+                <th>Reason For Extension:</th>
                 <td>{{$application_forms->Reason_For_Extension}}</td>
             </tr>
             <tr>
@@ -262,12 +292,12 @@
             </tr>
             <tr>
                 <th>EPIC/UID No. of Sponsor :</th>
-                <td><a href="/storage/documents_1/{{$application_forms->doc1}}"  target="_blank"><button class="btn btn-info">Click here to view</button></a></td>
+                <td><a href="/storage/documents_1/{{$application_forms->doc1}}"  target="_blank"><button class="btn btn-primary">Click here to view</button></a></td>
                 <td><a href="/download1/{{$application_forms->id}}" ><button class="btn btn-warning">Download Here</button></td>
             </tr>
             <tr>
                 <th>Provisional Pass No:</th>
-                <td><a href="/storage/documents_2/{{$application_forms->doc2}}"  target="_blank"><button class="btn btn-info">Click here to view</button></td>
+                <td><a href="/storage/documents_2/{{$application_forms->doc2}}"  target="_blank"><button class="btn btn-primary">Click here to view</button></td>
                 <br>
                 <td><a href="/download2/{{$application_forms->id}}" ><button class="btn btn-warning">Download Here</button></td>
             </tr>

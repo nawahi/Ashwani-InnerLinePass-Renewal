@@ -22,9 +22,14 @@ Route::get('/', function () {
 // 
 // 
 // 
-Route::get('/final', function () {
-  return view('index');
+Route::get("/homepage",function () {
+  return view('homepage');
 });
+///////////////////////////////
+///////  KYA BOLTI PUBLIC!!!!!!!!!!!
+Route::get('check','publicController@find');
+/////////////////////////////////
+
   // 
   // CSC
   // 
@@ -32,8 +37,28 @@ Route::get('/final', function () {
 Route::get('/csc', function () {
   return view('csc');
 });
+/////////// storing in database
+Route::get('/ApplicationForm', 'ApplicationFormController@index');
+Route::post('/store_form','ApplicationFormController@store');
+//////////// searching from database for acknowledgement and certificate
+Route::get('/retrieve', 'ApplicationFormController@retrieve');
+Route::get('/autofill','ApplicationFormController@autofill');
+//////////////////////// renewal process
 Route::get('/ListOfApplications','CscController@index');
 Route::get('/cscApplicationForm/{id}','CscController@show');
+////////////// getting back the data for data base
+
+
+
+
+
+
+
+
+
+
+//////////////
+
 Route::post('/forwardToForwarder','CscController@forwardToForwarder');
 Route::get('/gettingback/{id}','CscController@gettingback');
 Route::post('/gettingback/retrieve/{id}','CscController@retrieve');
@@ -44,6 +69,7 @@ Route::post('/gettingback/retrieve/{id}','CscController@retrieve');
 // 
 Route::get('/forwarder','forwarderController@index');
 Route::get('/info/{id}', 'forwarderController@show');
+Route::post('store', 'forwarderController@store');
 Route::get('/download1/{id}', 'forwarderController@download1');
 Route::get('/download2/{id}', 'forwarderController@download2');
 Route::post('/remarksByForwarder/{id}', 'forwarderController@remarksByForwarder');
@@ -54,6 +80,7 @@ Route::post('/reject/{id}', 'forwarderController@remarks');
 //
 Route::get('/officer', 'officerController@index');
 Route::post('/officer', 'officerController@index');
+Route::post('/store', 'officerController@store');
 Route::get('/officerDetails/{id}', 'officerController@show');
 Route::post('/remarkOff/{id}', 'officerController@update');
 Route::post('/rejectOff/{id}', 'officerController@remarks');
@@ -64,13 +91,10 @@ Route::post('/rejectOff/{id}', 'officerController@remarks');
 // 
 // 
 // 
-Route::get('/ApplicationForm', 'ApplicationFormController@index');
-Route::post('/store_form','ApplicationFormController@store');
-Route::get('/retrieve', 'ApplicationFormController@retrieve');
+
+
 // Route::get('/showme', 'ApplicationFormController@showme');
 
-Route::get('/search','ApplicationFormController@search');
-Route::get('/autofill','ApplicationFormController@autofill');
 Route::get('/ack/{id}','CscController@Acknowledgement');
 Route::get('/ceti/{id}','CscController@certificate');
 
@@ -79,6 +103,9 @@ Route::get('/home', 'HomeController@index') -> name ('home');
 Auth::routes();
 
 
+////// extras
+
+Route::get('/search','ApplicationFormController@search');
 
 
 
@@ -90,6 +117,28 @@ Auth::routes();
 
 
 
+
+
+
+
+
+
+
+
+
+
+//// testing
+Route::get("/doubt",function () {
+  return view('doubts_solving');
+});
+Route::get("/news",function () {
+  return view('news');
+});
+
+
+Route::get('/final', function () {
+  return view('index');
+});
 
 
 

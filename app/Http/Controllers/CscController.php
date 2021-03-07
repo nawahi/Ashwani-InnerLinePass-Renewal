@@ -28,6 +28,8 @@ public function forwardToForwarder()
     $application_forms->Application_No=request('Application_No');
     $application_forms->Application_date=request('Application_date');
     $application_forms->Applicant_Name=request('Applicant_Name');
+    $application_forms->Appellation=request('Appellation');
+    $application_forms->Suffix=request('Suffix');
     
     $application_forms->EPIC_UID_No=request('EPIC_UID_No');
     $application_forms->DOB=request('DOB');
@@ -40,6 +42,9 @@ public function forwardToForwarder()
     $application_forms->Email=request('Email');
     $application_forms->Contact_No=request('Contact_No');
     $application_forms->Fathers_Name=request('Fathers_Name');
+    $application_forms->Appellation_F=request('Appellation_F');
+    $application_forms->Suffix_F=request('Suffix_F');
+    
 
     $application_forms->Present_Address_Hno=request('Present_Address_Hno');
     $application_forms->Present_Address_Sub_locality1=request('Present_Address_Sub_locality1');
@@ -84,6 +89,7 @@ public function forwardToForwarder()
     $application_forms->sponsor_address_Post_office=request('sponsor_address_Post_office');
     
     $application_forms->VC=request('VC');
+    $application_forms->H_No=request('H_No');
     $application_forms->Purpose_of_stay=request('Purpose_of_stay');
     $application_forms->Need_for_labour=request('Need_for_labour');
     $application_forms->Regd_No=request('Regd_No');
@@ -137,12 +143,10 @@ public function forwardToForwarder()
     // // $file = new ApplicationForm;
     // $application_forms->doc2 =$filenametostore;
     
-    $application_forms->Remarks_from_forwarder='NULL';
-    $application_forms->Remarks_from_adc='NULL';
-
+    
 
     $application_forms->save();
-    
+    dd($application_forms);
     return redirect('/home')->with('mssg','Form Filled Succesfully'); 
 
 }
@@ -158,6 +162,9 @@ public function gettingback($id)
     $application_forms->Application_No=request('Application_No');
     $application_forms->Application_date=request('Application_date');
     $application_forms->Applicant_Name=request('Applicant_Name');
+    $application_forms->Appellation=request('Appellation');
+    $application_forms->Suffix=request('Suffix');
+    
     
     $application_forms->EPIC_UID_No=request('EPIC_UID_No');
     $application_forms->DOB=request('DOB');
@@ -170,6 +177,10 @@ public function gettingback($id)
     $application_forms->Email=request('Email');
     $application_forms->Contact_No=request('Contact_No');
     $application_forms->Fathers_Name=request('Fathers_Name');
+    $application_forms->Appellation_F=request('Appellation_F');
+    $application_forms->Suffix_F=request('Suffix_F');
+    
+
 
     $application_forms->Present_Address_Hno=request('Present_Address_Hno');
     $application_forms->Present_Address_Sub_locality1=request('Present_Address_Sub_locality1');
@@ -214,6 +225,8 @@ public function gettingback($id)
     $application_forms->sponsor_address_Post_office=request('sponsor_address_Post_office');
     
     $application_forms->VC=request('VC');
+    $application_forms->H_No=request('H_No');
+
     $application_forms->Purpose_of_stay=request('Purpose_of_stay');
     $application_forms->Need_for_labour=request('Need_for_labour');
     $application_forms->Regd_No=request('Regd_No');
@@ -269,7 +282,14 @@ public function gettingback($id)
     
    $application_forms->Remarks_from_forwarder='NULL';
     $application_forms->Remarks_from_adc='NULL';
+   
+    
+    $application_forms->A='bgf';
+    $application_forms->B='jhg';
+
     $application_forms->save();
+
+    
     $data= ApplicationForm::find($id);
     $applicantName = $data->Applicant_Name;
     $passNo = $data->Pass_No;
@@ -287,8 +307,8 @@ public function gettingback($id)
         $message->from("abc@mail.com","INNER LINE PASS");
         $message->replyTo("aktricks999@gmail.com");
 
-    });
-    // dd($receiverMail);
+    }); 
+//     // dd($receiverMail);
 
 
 

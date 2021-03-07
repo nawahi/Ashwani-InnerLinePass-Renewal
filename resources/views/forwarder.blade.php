@@ -9,9 +9,11 @@
   <thead class="column">
     <tr>
       <th >S.No.</th>
+      <th >ILP NUMBER</th>
       <th >Application No</th>
+      <th >Applicant Name</th>
       <th >Application Date</th>
-      <th >Period</th>
+      
     </tr>
   </thead>
   <tbody >
@@ -20,9 +22,11 @@
  
     <tr >
      <td>{{$loop->index+1}}</td>
+      <td> {{$application_form->Pass_No}}</td>
       <td><a href="/info/{{$application_form->id}}"> {{$application_form->Application_No}}</a></td>
+      <td>{{$application_form->Applicant_Name}}</td>
       <td>{{$application_form->Application_date}}</td>
-      <td>1day</td>
+     
     </tr>
     @endforeach
   </tbody>

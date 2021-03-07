@@ -80,18 +80,18 @@
 @section('content')
 <center> <div class ='grid-container'>
             <div class='item1'> 
-            <h2><STRONG> FOR FILLING A NEW FORM CLICK ON THE BUTTON BELOW</STRONG></h2>
+            <h2><STRONG>  FILL A NEW FORM </STRONG></h2>
              <BR>
              <a href="/ApplicationForm" ><button  class='btn1'>FILL FORM</button></a> 
              </div> 
             <HR>
             <div class='item2'>
-            <H2> <STRONG>FOR SEARCHING A SPECIFIC APPLICATION  CLICK ON THE BUTTON BELOW</STRONG> </H2>
+            <H2> <STRONG>SEARCH A SPECIFIC APPLICATION  </STRONG> </H2>
             <BR>
             <a href="/retrieve" ><button class='btn2'>SEARCH</button></a> </div>
             <HR>
           <div class='item2'>
-          <H2> <STRONG>FOR  CHECKING THE LIST OF APPLICATIONS  CLICK ON THE BUTTON BELOW</STRONG></H2> 
+          <H2> <STRONG> CHECK THE LIST OF APPLICATIONS  </STRONG></H2> 
           <BR>
           <a href="/ListOfApplications" ><button class='btn3'>CHECK LIST</button></a> <p> </p></div>
           </div>

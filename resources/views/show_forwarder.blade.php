@@ -1,11 +1,43 @@
 @extends('layouts.app')
 
+<style>
+.btn {
+  background-color: #f44336; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.danger {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.danger:hover {
+  background-color: #f44336;
+  color: white;
+}
+.jj{
+  height: 20px; 
+   background: white; 
+ }
+
+
+
+</style>
 @section('content')
     <div class="application_form">
         <div class="nav_form">
             <h2 class="navbar">Application Form No. :{{$application_forms->Application_No}}</h2>
         </div>
-        <table>
+        <table  class="table table-striped">
             <tr>
                 <th>Application date : </th>
                 <td>{{$application_forms->Application_date}}</td>
@@ -14,6 +46,21 @@
                 <th>Applicant Name*: </th>
                 <td>{{$application_forms->Applicant_Name}}</td>
             </tr>
+            <tr>
+                <th>PASS NUMBER : </th>
+                <td>{{$application_forms->Pass_No}}</td>
+            </tr>
+            <tr>
+                <th>Appellation: </th>
+
+               <td>{{$application_forms->Appellation}}</td>
+            </tr>
+            <tr>
+                <th>Suffix*: </th>
+
+                <td>{{$application_forms->Suffix_F}}</td>
+            </tr>
+            <tr>
             <tr>
                 <th>EPIC / UID No.* :</th>
                 <td>{{$application_forms->EPIC_UID_No}}</td>
@@ -57,6 +104,14 @@
             <tr>
                 <th>Father’s Name* :</th>
                 <td>{{$application_forms->Fathers_Name}}</td>
+            </tr>
+            <tr>
+                <th>Appellation :</th>
+                <td>{{$application_forms->Appellation_F}}</td>
+            </tr>
+            <tr>
+                <th>SUFFIX* :</th>
+                <td>{{$application_forms->Suffix_F}}</td>
             </tr>
             <tr>
                 <th>House no.* :</th>
@@ -216,6 +271,15 @@
                 <td>{{$application_forms->sponsor_address_Post_office}}</td>
             </tr>
             <tr>
+                <th>VC :</th>
+                <td>{{$application_forms->VC}}</td>
+            </tr>
+            <tr>
+                <th>H_No:</th>
+                <td>{{$application_forms->H_No}}</td>
+            </tr>
+            <tr>
+            <tr>
                 <th>Purpose of stay : </th>
                 <td>{{$application_forms->Purpose_of_stay}}</td>
             </tr>
@@ -254,21 +318,32 @@
             </tr>
             <tr>
                 <th>EPIC/UID No. of Sponsor :</th>
-                <td><a href="/storage/documents_1/{{$application_forms->doc1}}" target="_blank">Click here to view</a></td>
-                <td><a href="/download1/{{$application_forms->id}}">Download Here</a></td>
+                <td><a href="/storage/documents_1/{{$application_forms->doc1}}"  target="_blank"><button class="btn btn-primary">Click here to view</button></a></td>
+                <td><a href="/download1/{{$application_forms->id}}" ><button class="btn btn-warning">Download Here</button></td>
             </tr>
             <tr>
                 <th>Provisional Pass No:</th>
-                <td><a href="/storage/documents_2/{{$application_forms->doc2}}" target="_blank">Click here to view</a></td>
-                <td><a href="/download2/{{$application_forms->id}}">Download Here</a></td>
+                <td><a href="/storage/documents_2/{{$application_forms->doc2}}"  target="_blank"><button class="btn btn-primary">Click here to view</button></td>
+                <br>
+                <td><a href="/download2/{{$application_forms->id}}" ><button class="btn btn-warning">Download Here</button></td>
             </tr>
-        </table>    
-        Due date for decision on Application :
+        </table>   
+        <hr class="jj"> 
+        <form action="/store" method="post">
+
+@csrf
+        Comments_by_the_forwarder* : <textarea name="Comments_by_the_forwarder" id="Comments_by_the_forwarder" cols="30" rows="10" required></textarea>
+           
+        <li>Due_date_for_decision_of_application_ : <input type="date" name="Due_date_for_decision_of_application_" placeholder="Due_date_for_decision_of_application_" required></li>
+
+        <li>Target_date : <input type="date" name="Target_date" placeholder="Target_date" required></li>
+           
+            </form>
             <br>
             <form action="/remarksByForwarder/{{$application_forms->id}}" method="post">
             @csrf
-                <button type="submit" name="Accept"class="submit_btn">Accept</button>
-                <button type="submit" name="Reject"class="submit_btn">Reject</button>
+                <button type="submit" name="Accept"class="btn btn-success">Accept</button>
+                <button type="submit" name="Reject"class="btn danger">Reject</button>
             </form>
     </div>
     @endsection

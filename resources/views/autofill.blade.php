@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.ash')
 @section('content')
 <form action="{{ url('/autofill') }}" method="get">
   @csrf
@@ -22,8 +22,8 @@
       <th >Application No</th>
       <th >Applicant_Name</th>
       <th >Application Date</th>
-      <th >ACK</th>
-      <th >certi</th>
+      <th >ACKNOWLEDGEMENT</th>
+      <th >CERTIFICATE</th>
 
     </tr>
   </thead>
@@ -33,16 +33,16 @@
  
     <tr >
      <td>{{$loop->index+1}}</td>
-      <td><a href="/info/{{$item->id}}"> {{$item->Application_No}}</a></td>
+      <td><a href="/cscApplicationForm/{{$item->id}}"> {{$item->Application_No}}</a></td>
       <td>{{$item->Applicant_Name}}</td>
       <td>{{$item->Application_date}}</td>
      
     @if($item->Remarks_from_adc=="Accepted")
     <td> 
-        <a href="ack/{{$item->id}}" > acknowledgement</a>
+        <a href="ack/{{$item->id}}" >  <button class="btn btn-warning">ACKNOWLEDGEMENT </button></a>
     </td>
     <td> 
-        <a href="ceti/{{$item->id}}" > cetificate</a>
+      <a href="ceti/{{$item->id}}" >   <button class="btn btn-warning">CERTIFICATE </button></a>
     </td>
 
     @endif

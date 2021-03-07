@@ -3,3 +3,4 @@
  Age: {{$waah->kum}}
  <br>
 @endforeach
+

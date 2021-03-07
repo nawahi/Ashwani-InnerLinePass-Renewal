@@ -18,12 +18,29 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+<link rel="shortcut icon" href="img/mseg.ico" type="image/x-icon">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md bg-white shadow-sm ">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/csc') }}">
+                GO BACK
+                </a>
+                <a class="navbar-brand" href="#">
+                
+                </a>
+                <a class="navbar-brand" href="#">
+                
+                </a>
+                <a class="navbar-brand" href="#">
+                
+                </a>
+                <a class="navbar-brand" href="#">
+                
+                </a>
+                <a class="navbar-brand" href="{{ url('/homepage') }}">
                 INNER LINE PASS
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
