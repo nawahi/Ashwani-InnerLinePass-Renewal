@@ -131,17 +131,17 @@ $receiverMail = $abs;
     }
 
 
-    public function store(Request $request)
-{
+//     public function store($id)
+// {
     
-    $application_forms= new ApplicationForm();
-    $application_forms->Note_sheet=request('Note_sheet');
-    $application_forms->Due_date_for_decision_of_application_o=request('Due_date_for_decision_of_application_o');
-    $application_forms->Target_date=request('Target_date');
+//     $application_forms= ApplicationForm::where('id',$id)->first();
+//     $application_forms->Note_sheet=request('Note_sheet');
+//     $application_forms->Due_date_for_decision_of_application_o=request('Due_date_for_decision_of_application_o');
+//     $application_forms->Target_date=request('Target_date');
    
-    $application_forms->save();
+//     $application_forms->save();
 
 
-}
+// }
 
 }

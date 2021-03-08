@@ -146,7 +146,7 @@ public function forwardToForwarder()
     
 
     $application_forms->save();
-    dd($application_forms);
+    // dd($application_forms);
     return redirect('/home')->with('mssg','Form Filled Succesfully'); 
 
 }
@@ -286,6 +286,9 @@ public function gettingback($id)
     
     $application_forms->A='bgf';
     $application_forms->B='jhg';
+    
+    $application_forms->Certificate='abc';
+    $application_forms->Acknowledgement='NULL';
 
     $application_forms->save();
 
@@ -353,7 +356,9 @@ public function download2($id){
 
 public function Acknowledgement($id){
     $applicant = ApplicationForm:: find($id);
-    
+   
+  
+    // dd($applicant);
     $pdf = PDF::loadView('Acknowledgement',compact('applicant'));
     $fileName ="";
     try{
@@ -363,8 +368,13 @@ public function Acknowledgement($id){
     {
         $fileName = 'myInfo';
     }
+   
+    $applicant->Acknowledgement="Downloaded";
+    $applicant->save();
+   
     //return $pdf->stream();
     return $pdf->download($fileName.'.pdf');
+
 }
 
 public function certificate($id){
@@ -380,8 +390,12 @@ public function certificate($id){
     {
         $fileName = 'myInfo';
     }
-    return $pdf->stream();
-    // return $pdf->download($fileName.'.pdf');
+   
+  
+    // return $pdf->stream();
+    // $applicant->Certificate="Downloaded";
+    // $applicant->save();
+     return $pdf->download($fileName.'.pdf');
 }
 }
 

@@ -82,7 +82,7 @@ legend{
             text-align:center;
             opacity:0.1;
             z-index:0;
-            
+           
         }
 
 
@@ -100,7 +100,7 @@ legend{
 </head>
 <body>
     <div id="back">
-        <img src="{{public_path('/img/ashok.jpeg')}}" style="width:40rem;height:auto;"> 
+        <img src="{{public_path('/img/ashok.jpeg')}}" style="width:200px;height:350px;"> 
         
     </div>
     <div id='front'>
@@ -169,7 +169,7 @@ legend{
             </div>
             <br>
             <div>
-                <p class="sign"> (SAGCHHIN CHINZAH)<br>Additional Deputy Commissioner(G)<br>Aizawl District , Aizawl</p>
+                <p class="sign"> (LALSANGLIANA)<br>Certificate officer<br>Aizawl District , Aizawl</p>
             </div> 
          
     </div>

@@ -29,7 +29,7 @@ class publicController extends Controller
           if($application_forms->Remarks_from_forwarder=="NULL")
         {
             if($application_forms->Remarks_from_adc=="NULL"){
-                return redirect("/homepage")->with("pending","Application status:  pending. Waiting for the forwarder and officer to approve you application");
+                return redirect("/homepage")->with("pending","Application status:  pending. Waiting for the forwarder and officer to approve your application");
             }
         }
         elseif($application_forms->Remarks_from_forwarder=="Accepted")

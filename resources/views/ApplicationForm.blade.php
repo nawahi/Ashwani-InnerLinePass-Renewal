@@ -28,10 +28,10 @@ li{
             <ol>
             <div id="personalDetail" class="block">
               <center><h3 >Personal Detail :--</h3></center>  
-              Application no: <input type="text" name="Application_No" id="Application_No">
-              Applicant Name*: <input type="text" name="Applicant_Name"placeholder="Applicant Name" required>
-              Application date : <input type="date" name="Application_date" placeholder="Application date" required>
-              Appellation* :
+                <li>Application no: <input type="text" name="Application_No" id="Application_No"></li>
+                <li>Applicant Name*: <input type="text" name="Applicant_Name"placeholder="Applicant Name" required></li>
+                <li>Application date : <input type="date" name="Application_date" placeholder="Application date" required></li>
+                <li>Appellation* :
                     <select name="Appellation" >
                         <option value="0"selected disabled>Select</option>
                         <option value="a">a</option>

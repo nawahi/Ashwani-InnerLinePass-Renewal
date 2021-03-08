@@ -69,7 +69,7 @@ Route::post('/gettingback/retrieve/{id}','CscController@retrieve');
 // 
 Route::get('/forwarder','forwarderController@index');
 Route::get('/info/{id}', 'forwarderController@show');
-Route::post('store', 'forwarderController@store');
+// Route::post('store/{id}', 'forwarderController@store');
 Route::get('/download1/{id}', 'forwarderController@download1');
 Route::get('/download2/{id}', 'forwarderController@download2');
 Route::post('/remarksByForwarder/{id}', 'forwarderController@remarksByForwarder');
@@ -80,7 +80,7 @@ Route::post('/reject/{id}', 'forwarderController@remarks');
 //
 Route::get('/officer', 'officerController@index');
 Route::post('/officer', 'officerController@index');
-Route::post('/store', 'officerController@store');
+// Route::post('/store', 'officerController@store');
 Route::get('/officerDetails/{id}', 'officerController@show');
 Route::post('/remarkOff/{id}', 'officerController@update');
 Route::post('/rejectOff/{id}', 'officerController@remarks');
@@ -100,7 +100,9 @@ Route::get('/ceti/{id}','CscController@certificate');
 
 
 Route::get('/home', 'HomeController@index') -> name ('home');
-Auth::routes();
+Auth::routes([
+  'register'=>false
+]);
 
 
 ////// extras

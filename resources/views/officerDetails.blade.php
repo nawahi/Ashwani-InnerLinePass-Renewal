@@ -263,7 +263,7 @@
                 <td><a href="/download2/{{$application_forms->id}}" ><button class="btn btn-warning">Download Here</button></td>
             </tr>
         </table> 
-        <form action="/store" method="post">
+        <!-- <form action="/store" method="post">
         @csrf
         Note_sheet : <textarea name="Note_sheet" id="Note_sheet" cols="30" rows="10" required></textarea>
         
@@ -271,7 +271,7 @@
 
 <li>Target_date_o : <input type="date" name="Target_date_o" placeholder="Target_date_o" required></li>
    
-        </form>
+        </form> -->
 
 
 

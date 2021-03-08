@@ -329,16 +329,18 @@
             </tr>
         </table>   
         <hr class="jj"> 
-        <form action="/store" method="post">
+        <!-- <form action="/store/{{$application_forms->id}}" method="post">
 
 @csrf
+
+@method('PATCH')
         Comments_by_the_forwarder* : <textarea name="Comments_by_the_forwarder" id="Comments_by_the_forwarder" cols="30" rows="10" required></textarea>
            
         <li>Due_date_for_decision_of_application_ : <input type="date" name="Due_date_for_decision_of_application_" placeholder="Due_date_for_decision_of_application_" required></li>
 
         <li>Target_date : <input type="date" name="Target_date" placeholder="Target_date" required></li>
            
-            </form>
+            </form> -->
             <br>
             <form action="/remarksByForwarder/{{$application_forms->id}}" method="post">
             @csrf

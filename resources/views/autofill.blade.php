@@ -37,15 +37,18 @@
       <td>{{$item->Applicant_Name}}</td>
       <td>{{$item->Application_date}}</td>
      
-    @if($item->Remarks_from_adc=="Accepted")
+      @if($item->Remarks_from_adc=="Accepted")
     <td> 
-        <a href="ack/{{$item->id}}" >  <button class="btn btn-warning">ACKNOWLEDGEMENT </button></a>
+      <a href="ack/{{$item->id}}" >   <button class="btn btn-warning">acknowledgement </a>
     </td>
     <td> 
-      <a href="ceti/{{$item->id}}" >   <button class="btn btn-warning">CERTIFICATE </button></a>
+    <a href="ceti/{{$item->id}}" >  <button class="btn btn-warning"> cetificate </button></a></button>
     </td>
-
+    @else()
+<td>pending</td>
+<td>pending</td>
     @endif
+    
     </tr>
     @endforeach
   </tbody>
