@@ -181,6 +181,7 @@ public function gettingback($id)
     $application_forms->Suffix_F=request('Suffix_F');
     
 
+    
 
     $application_forms->Present_Address_Hno=request('Present_Address_Hno');
     $application_forms->Present_Address_Sub_locality1=request('Present_Address_Sub_locality1');
