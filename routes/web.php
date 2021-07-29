@@ -103,7 +103,7 @@ Route::get('/home', 'HomeController@index') -> name ('home');
 Auth::routes(
 
 
-  // ['register'=>false]     // use this for disabling the registration
+  // ['register'=>false]     // use this for disabling the registration in future
 
 
 );
