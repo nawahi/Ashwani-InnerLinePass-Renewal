@@ -100,9 +100,13 @@ Route::get('/ceti/{id}','CscController@certificate');
 
 
 Route::get('/home', 'HomeController@index') -> name ('home');
-Auth::routes([
-  'register'=>false
-]);
+Auth::routes(
+
+
+  // ['register'=>false]     // use this for disabling the registration
+
+
+);
 
 
 ////// extras
